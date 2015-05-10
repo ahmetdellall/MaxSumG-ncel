@@ -1,0 +1,2 @@
+# MaxSumG-ncel
+MaxSumGüncel
