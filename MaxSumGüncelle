@@ -3,12 +3,14 @@ public final class MaxSumTest
     static private int seqStart = 0;
     static private int seqEnd = -1;
 
- public static int maxSubSum( int [ ] a )
+ public static []int maxSubSum( int [ ] a )
     {
+    int dizi[] = new array();
         int maxSum = 0;
 
         for( int i = 0; i < a.length; i++ )
         {
+           
             int thisSum = 0;
             for( int j = i; j < a.length; j++ )
             {
@@ -20,10 +22,14 @@ public final class MaxSumTest
                     seqStart = i;
                     seqEnd   = j;
                 }
+                
             }
+            dizi[0]=maxSum;
+            dizi[1]=seqStart;
+            dizi[2]=seqEnd;
         }
 
-        return maxSum;
+        return dizi;
     }
      public static void main( String [ ] args )
     {
@@ -32,8 +38,9 @@ public final class MaxSumTest
 
      
         maxSum = maxSubSum( a );
-        System.out.println( "Max Toplam " + maxSum + "; Devam Et"
-                       + " Başlangıc " + seqStart + " Devam " + seqEnd );
         
+        System.out.println( "Max Toplam " + maxSum[0] + "; Devam Et"
+                       + " Başlangıc " + maxSum[1] + " Devam " + maxSum[2] );
+        }
     }
 }
